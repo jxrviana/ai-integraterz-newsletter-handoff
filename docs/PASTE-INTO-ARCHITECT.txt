@@ -1,0 +1,76 @@
+Spin up a new business from this company package.
+
+PROVISIONING REQUEST
+====================
+
+Source: https://github.com/jbellsolutions/overdeliver-mail-agency
+Path: /
+Target: NEW COMPANY
+Name: Overdeliver Mail Agency
+Slug: overdeliver-mail-agency
+Adapter: claude_local
+
+Org chart: 67 agents across 5 layers
+- CEO: ceo-brian-kurtz (single owner-facing seat)
+- Board of Directors (advisory, invoked via board-consult skill):
+    board-marty-edelston, board-dick-benson, board-gordon-grossman,
+    board-eugene-schwartz, board-gary-bencivenga, board-jay-abraham,
+    board-david-ogilvy, board-dan-kennedy, board-joe-sugarman, board-lester-wunderman
+- Council of Counsel (16 peers): peer-halbert, peer-lampropoulos, peer-mel-martin,
+    peer-jim-rutz, peer-david-deutsch, peer-bob-bly, peer-bill-bonner,
+    peer-kevin-trudeau, peer-jeff-walker, peer-dan-sullivan, peer-adam-grant,
+    peer-napoleon-hill, peer-robert-cialdini, peer-shawn-stevenson,
+    peer-rosser-reeves, peer-jay-walker
+- Honored Titans: claude-hopkins, titan-howard-ruff
+- Heads (5): head-of-list, head-of-copy, head-of-offer, head-of-analytics,
+    head-of-back-end
+- Editorial floor (6): editor-in-chief, managing-editor, copy-editor, fact-checker,
+    researcher, secret-shopper
+- Deliverability ops (4): deliverability-engineer, domain-warmup-engineer,
+    postmaster-tools-analyst, inbox-placement-tester
+- DFY service line (4): dfy-account-manager, dfy-client-onboarding,
+    dfy-client-reporter, dfy-fulfillment-lead
+- Other specialists: list-acquisition, list-hygiene, segmentation-analyst,
+    cold-list-acquisition, warm-list-nurture, lead-copywriter, editor,
+    swipe-curator, offer-architect, premium-designer, rfm-analyst,
+    test-designer, customer-service-lead, retention-lead,
+    jv-affiliate-partner, mastermind-organizer, onboarding-concierge
+
+Standing routines: 13 (in tasks/)
+Standing projects: 7 (in projects/)
+Skills: 13 (in skills/)
+Teams: 9 (in teams/)
+
+Company secrets to populate (I will fill these in after creation):
+  OPENROUTER_API_KEY
+  COMPOSIO_API_KEY
+  INTEGRATIONS_URL              (default http://localhost:8080)
+  ESP_API_KEY
+  ESP_PROVIDER                  (customer-io | klaviyo | sendgrid | postmark | ses)
+  LIST_ANALYTICS_DB_URL
+  WARMUP_DOMAIN_POOL_SIZE       (recommended: start at 8)
+  SEED_LIST_PROVIDER_API_KEY    (glockapps | inboxally | 250ok)
+  POSTMASTER_TOOLS_TOKEN
+  IP_POOL_PROVIDER
+
+Initial budget cap: $500/month — raise after first week's data.
+
+Owner-facing routing: ALL owner comments + Slack mentions route to ceo-brian-kurtz
+only. All other agents muted from owner notifications.
+
+Routine activation at import:
+- welcome-and-setup: ON (fires immediately)
+- daily-engagement-review, daily-editorial-standup, daily-deliverability-check: ON
+- weekly-rfm-cut, weekly-promotion-planning, weekly-ceo-brief,
+  weekly-warmup-ramp-review: ON (per schedule)
+- monthly-deliverability-audit, monthly-board-review: ON (per schedule)
+- daily-send: OFF until I confirm Onboarding interview is complete
+- daily-dfy-standup, weekly-dfy-qbr: OFF until first DFY client signs
+
+Please confirm after import:
+1. New company ID
+2. Brian (CEO) is wired as the only owner-facing agent
+3. The 10 Board members exist but are not on any routine schedules
+4. The Welcome & Setup task is in `todo` status
+5. daily-send is paused, will not fire until I greenlight
+6. Budget cap set to $500/month

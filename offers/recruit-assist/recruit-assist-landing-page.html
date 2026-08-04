@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recruit Assist — a trained recruitment assistant for your desk</title>
+<meta name="description" content="Split the desk, keep the billings. One trained assistant runs your outreach, your sourcing, or both — for a fraction of a resourcer on payroll, with none of the employment risk.">
+<style>
+:root{
+  --ink:#0A0F24; --ink2:#111935; --ink-soft:#3D4568; --muted:#6E769C; --hair:#E3E6F2;
+  --paper:#fff; --paper2:#F6F7FC;
+  --on-dark:#fff; --on-dark-soft:#B9C0E4; --on-dark-mute:#7C86B4; --dark-hair:rgba(255,255,255,.14);
+  --green:#12A06B; --green-ink:#0A6644; --green-wash:#E7F7F0;
+  --indigo:#3D5BE0; --indigo-ink:#1E2F8F; --indigo-wash:#ECEFFD;
+  --amber:#E3A008; --amber-ink:#7A5300; --amber-wash:#FEF6E4;
+  --violet:#7B5CF0; --violet-wash:#F0ECFE; --violet-ink:#4526B8;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --w:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+.narrow{max-width:720px}
+a{color:inherit}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.08;font-weight:800}
+h1{font-size:clamp(38px,6.2vw,68px)}
+h2{font-size:clamp(27px,3.6vw,42px);letter-spacing:-.028em;line-height:1.14}
+h3{font-size:19px;letter-spacing:-.02em}
+p{font-family:var(--serif)}
+.btn{display:inline-block;background:var(--amber);color:#2A1D00;font-family:var(--sans);font-weight:800;
+  font-size:17px;padding:16px 32px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(227,160,8,.32)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid var(--dark-hair);font-weight:700}
+.btn.ghost:hover{box-shadow:none;background:rgba(255,255,255,.06)}
+
+/* ---------- nav ---------- */
+nav{position:absolute;top:0;left:0;right:0;z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px}
+.logo{display:flex;align-items:center;gap:9px;color:#fff;text-decoration:none}
+.logo .mark{width:16px;height:16px;border-radius:5px;background:var(--amber);box-shadow:0 0 0 4px rgba(227,160,8,.2)}
+.logo .wm{font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.logo .by{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-mute)}
+nav .navcta{font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;text-decoration:none;
+  border:1px solid var(--dark-hair);border-radius:999px;padding:9px 18px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#fff;position:relative;padding:150px 0 92px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 150% at 88% -20%,rgba(18,160,107,.40) 0%,rgba(18,160,107,0) 55%),
+             radial-gradient(110% 140% at 4% 120%,rgba(61,91,224,.34) 0%,rgba(61,91,224,0) 58%)}
+.hero .wrap{position:relative}
+.rule{position:absolute;bottom:0;left:0;right:0;height:5px;display:flex}
+.rule i{display:block;height:5px}
+.hero .eyebrow{color:var(--amber);margin-bottom:20px}
+.hero h1 .thin{font-weight:300;color:var(--on-dark-soft);display:block}
+.hero .sub{font-family:var(--serif);font-size:clamp(17px,2vw,21px);line-height:1.5;color:var(--on-dark-soft);
+  margin-top:26px;max-width:640px}
+.hero .sub b{color:#fff;font-weight:600}
+.hero .acts{display:flex;align-items:center;gap:18px;margin-top:38px;flex-wrap:wrap}
+.hero .acts a.sec{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--on-dark-soft);text-decoration:none;border-bottom:1px solid var(--dark-hair);padding-bottom:2px}
+
+/* ---------- generic section ---------- */
+section{padding:88px 0}
+.sec-label{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.sec-label .t{font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.sec-label .r{flex:1;height:1px;background:var(--hair)}
+.lede{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink-soft)}
+.lede b{color:var(--ink);font-weight:600}
+.lede + .lede{margin-top:18px}
+
+/* problem */
+.problem{background:var(--paper2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.problem h2{max-width:15ch}
+.problem .body{margin-top:26px}
+.problem .body p{font-size:19px;line-height:1.6;color:var(--ink-soft);margin-bottom:18px}
+.problem .body p:last-child{margin-bottom:0}
+.problem .body b{color:var(--ink);font-weight:600}
+.kicker-line{margin-top:30px;padding-top:22px;border-top:2px solid var(--ink);font-family:var(--sans);
+  font-size:clamp(20px,2.4vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pillar{border:1px solid var(--hair);border-top:4px solid var(--a);border-radius:11px;padding:22px 20px 20px;background:#fff}
+.pillar .n{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.pillar .num{width:21px;height:21px;border-radius:6px;background:var(--a);color:#fff;font-size:11px;font-weight:800;
+  display:flex;align-items:center;justify-content:center}
+.pillar h3{color:var(--ink)}
+.pillar .s{font-size:13.5px;font-weight:600;color:var(--a-ink);line-height:1.4;min-height:38px}
+.pillar ul{list-style:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--hair)}
+.pillar li{font-family:var(--serif);font-size:14.5px;line-height:1.42;color:var(--ink-soft);padding-left:14px;position:relative;margin-bottom:9px}
+.pillar li:last-child{margin-bottom:0}
+.pillar li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--a)}
+.c-green{--a:var(--green);--a-ink:var(--green-ink);--a-wash:var(--green-wash)}
+.c-indigo{--a:var(--indigo);--a-ink:var(--indigo-ink);--a-wash:var(--indigo-wash)}
+.c-violet{--a:var(--violet);--a-ink:var(--violet-ink);--a-wash:var(--violet-wash)}
+
+/* halves */
+.halves{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.half{background:var(--a);color:#fff;border-radius:12px;padding:28px 26px}
+.half .k{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.half h3{font-size:clamp(23px,2.7vw,30px);margin:4px 0 8px}
+.half .eq{font-size:15px;font-weight:600;color:rgba(255,255,255,.9)}
+.half .q{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.45;
+  margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.24);color:rgba(255,255,255,.94)}
+.bundle{margin-top:18px;background:var(--amber-wash);border:1px solid #F1D89A;border-left:5px solid var(--amber);
+  border-radius:12px;padding:24px 28px;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.bundle .l{flex:1;min-width:240px}
+.bundle .k{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-ink)}
+.bundle .t{font-size:clamp(21px,2.5vw,27px);font-weight:800;letter-spacing:-.026em;margin-top:3px}
+.bundle .r{font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--amber-ink);max-width:400px}
+
+/* comparison */
+.compare{background:var(--ink);color:#fff}
+.compare .sec-label .t{color:var(--on-dark-mute)}
+.compare .sec-label .r{background:var(--dark-hair)}
+.compare h2{max-width:18ch}
+.compare .intro{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--on-dark-soft);margin-top:20px;max-width:640px}
+.cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:40px}
+.col{border:1px solid var(--dark-hair);border-radius:12px;padding:26px 24px;background:rgba(255,255,255,.03)}
+.col.win{background:#fff;color:var(--ink);border:1px solid transparent;border-top:4px solid var(--green)}
+.col .k{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--on-dark-mute)}
+.col.win .k{color:var(--green-ink)}
+.col h3{margin:5px 0 16px;font-size:21px}
+.col ul{list-style:none}
+.col li{font-family:var(--serif);font-size:15px;line-height:1.44;color:var(--on-dark-soft);
+  padding-left:20px;position:relative;margin-bottom:11px}
+.col.win li{color:var(--ink-soft)}
+.col li:last-child{margin-bottom:0}
+.col li::before{content:"–";position:absolute;left:2px;color:var(--on-dark-mute);font-weight:700}
+.col.win li::before{content:"✓";color:var(--green);font-weight:900;font-size:13px;font-family:var(--sans);left:0}
+.compare .close{margin-top:36px;padding-top:26px;border-top:1px solid var(--dark-hair);
+  font-family:var(--sans);font-size:clamp(18px,2.2vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.4;max-width:900px}
+.compare .close em{color:var(--amber);font-style:normal}
+
+/* pricing */
+.pricing{background:var(--paper2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.prow{display:flex;align-items:center;gap:28px;background:#fff;border:1px solid var(--hair);border-radius:12px;
+  padding:26px 30px;margin-top:16px;flex-wrap:wrap}
+.prow.two{border-top:4px solid var(--indigo)}
+.prow.one{border-top:4px solid var(--green)}
+.prow .who{flex:0 0 210px}
+.prow .who .n{font-size:21px;font-weight:800;letter-spacing:-.022em}
+.prow .who .k{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.prow .price{flex:0 0 150px;font-family:var(--sans);font-size:38px;font-weight:800;letter-spacing:-.035em;line-height:1}
+.prow.one .price{color:var(--green-ink)} .prow.two .price{color:var(--indigo-ink)}
+.prow .price span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.prow .what{flex:1;min-width:240px;font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--ink-soft)}
+.prow .what b{color:var(--ink);font-weight:600}
+.pincl{margin-top:22px;padding:20px 26px;background:#fff;border:1px solid var(--hair);border-radius:12px;
+  font-family:var(--serif);font-size:16px;line-height:1.55;color:var(--ink-soft)}
+.pincl b{color:var(--ink);font-weight:600}
+.pmath{margin-top:16px;font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* delivery */
+.deliv{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+.d{display:flex;gap:12px;align-items:flex-start}
+.d .ck{width:19px;height:19px;border-radius:6px;background:var(--green);flex:none;margin-top:2px;color:#fff;
+  font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.d .tx{font-family:var(--serif);font-size:16.5px;line-height:1.45;color:var(--ink-soft)}
+.d .tx b{color:var(--ink);font-weight:600}
+.d.hero-item .tx b{font-size:17.5px}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:12px;border-top:2px solid var(--hair)}
+.tl .step{padding:22px 18px 0 0;position:relative}
+.tl .step::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;
+  background:var(--indigo);border:3px solid #fff;box-shadow:0 0 0 2px var(--indigo)}
+.tl .day{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo-ink)}
+.tl .what{font-family:var(--serif);font-size:15px;line-height:1.42;color:var(--ink-soft);margin-top:7px}
+.tl .what b{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
+.tl-note{margin-top:32px;padding:20px 24px;background:var(--green-wash);border-left:4px solid var(--green);
+  border-radius:0 10px 10px 0;font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+
+/* faq */
+.faq{border-top:1px solid var(--hair);padding:26px 0}
+.faq:last-of-type{border-bottom:1px solid var(--hair)}
+.faq h3{margin-bottom:9px}
+.faq p{font-size:16.5px;line-height:1.55;color:var(--ink-soft)}
+.faq p b{color:var(--ink);font-weight:600}
+
+/* cross-ref */
+.xref{border:1px solid #D7CCFB;background:var(--violet-wash);border-radius:12px;padding:26px 28px;margin-top:44px}
+.xref .k{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--violet-ink)}
+.xref h3{margin:4px 0 8px;font-size:22px}
+.xref p{font-size:16px;line-height:1.5;color:var(--ink-soft)}
+.xref a{font-family:var(--sans);font-weight:700;color:var(--violet-ink);text-decoration:none;border-bottom:2px solid #D7CCFB;display:inline-block;margin-top:12px;font-size:15px}
+
+/* close */
+.final{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:96px 0}
+.final::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 150% at 10% -20%,rgba(18,160,107,.34) 0%,rgba(18,160,107,0) 55%),
+             radial-gradient(110% 140% at 92% 120%,rgba(61,91,224,.3) 0%,rgba(61,91,224,0) 58%)}
+.final .wrap{position:relative}
+.final .k{color:var(--amber);margin-bottom:16px}
+.final h2{max-width:16ch}
+.final p{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--on-dark-soft);margin-top:22px;max-width:600px}
+.final .acts{display:flex;gap:18px;align-items:center;margin-top:36px;flex-wrap:wrap}
+
+footer{background:#060A18;color:var(--on-dark-mute);padding:34px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media(max-width:980px){
+  .pillars{grid-template-columns:1fr 1fr}
+  .cols{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:720px){
+  section{padding:62px 0}
+  .hero{padding:126px 0 68px}
+  .pillars,.halves,.deliv,.tl{grid-template-columns:1fr}
+  .pillar .s{min-height:0}
+  .tl{border-top:none}
+  .tl .step{padding:0 0 22px 24px;border-left:2px solid var(--hair)}
+  .tl .step::before{top:2px;left:-7px}
+  .bundle{flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style></head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top"><span class="mark"></span><span class="wm">Recruit Assist</span><span class="by">by AI Integraterz</span></a>
+  <a class="navcta" href="#audit">Book a desk audit</a>
+</div></nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="rule"><i style="width:30%;background:#12A06B"></i><i style="width:26%;background:#3D5BE0"></i><i style="width:26%;background:#E3A008"></i><i style="width:18%;background:#12B5CE"></i></div>
+  <div class="wrap">
+    <div class="eyebrow">For recruitment &amp; search firms</div>
+    <h1>Split the desk.<span class="thin">Keep the billings.</span></h1>
+    <p class="sub">One trained assistant who runs your outreach, your sourcing, or both — with our systems behind them. <b>So BD never stops the week delivery gets loud.</b></p>
+    <div class="acts">
+      <a class="btn" href="#audit">Book a desk audit</a>
+      <a class="sec" href="#pricing">$1,500 a month, per assistant ↓</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PROBLEM ================= -->
+<section class="problem">
+  <div class="wrap narrow">
+    <h2>You already know exactly how this goes.</h2>
+    <div class="body">
+      <p>The desk is quiet, so you do BD. BD works, so you win roles. Roles need filling, so you stop doing BD and go into delivery. You fill them, you bill, it's a good month.</p>
+      <p>Then eight weeks later the pipeline is empty — because nobody was doing BD while you were sourcing.</p>
+      <p><b>That's not a discipline problem. It's a structural one.</b> A 360 desk has two full-time jobs on it and one person, and whichever job is loudest that week wins.</p>
+    </div>
+    <div class="kicker-line">The billers who escape it all do the same one thing: they get another pair of hands on one side of the desk.</div>
+  </div>
+</section>
+
+<!-- ================= PILLARS ================= -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="sec-label"><div class="t">What they actually do</div><div class="r"></div></div>
+    <div class="pillars">
+      <div class="pillar c-green">
+        <div class="n"><span class="num">1</span><h3>OUTREACH</h3></div>
+        <div class="s">Client conversations, running every day.</div>
+        <ul>
+          <li>LinkedIn campaigns and conversations</li>
+          <li>Cold email sequences, built and sent</li>
+          <li>Follow-up, reply triage, meetings booked into your diary</li>
+        </ul>
+      </div>
+      <div class="pillar c-green">
+        <div class="n"><span class="num">2</span><h3>PRESENCE</h3></div>
+        <div class="s">The collateral that makes outreach land.</div>
+        <ul>
+          <li>Adverts written and posted</li>
+          <li>Website, LinkedIn page and posts</li>
+          <li>Case studies, mailers, market updates</li>
+        </ul>
+      </div>
+      <div class="pillar c-indigo">
+        <div class="n"><span class="num">3</span><h3>SOURCE</h3></div>
+        <div class="s">Finding them, so you're talking to them.</div>
+        <ul>
+          <li>Mapping, longlists, boolean and x-ray</li>
+          <li>Headhunting outreach to passive candidates</li>
+          <li>MPC and float lists off your own bench</li>
+        </ul>
+      </div>
+      <div class="pillar c-indigo">
+        <div class="n"><span class="num">4</span><h3>RUN THE DESK</h3></div>
+        <div class="s">Everything that currently eats your evening.</div>
+        <ul>
+          <li>Screening prep, CVs formatted to your spec</li>
+          <li>Scheduling, references, compliance chasing</li>
+          <li>ATS hygiene and pipeline reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HALVES ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label"><div class="t">Buy a half, or the whole desk</div><div class="r"></div></div>
+    <div class="halves">
+      <div class="half c-green">
+        <div class="k">Offer 1 · Pillars 1 + 2</div>
+        <h3>Win The Work</h3>
+        <div class="eq">Outreach + Presence — BD that runs without you.</div>
+        <div class="q">“I only do BD when the desk goes quiet — and by then it's already too late.”</div>
+      </div>
+      <div class="half c-indigo">
+        <div class="k">Offer 2 · Pillars 3 + 4</div>
+        <h3>Fill The Work</h3>
+        <div class="eq">Source + Run the Desk — delivery, off your plate.</div>
+        <div class="q">“I'm winning roles I don't have time to fill properly. I'm turning work away.”</div>
+      </div>
+    </div>
+    <div class="bundle">
+      <div class="l">
+        <div class="k">Both halves together</div>
+        <div class="t">Recruit Assist</div>
+      </div>
+      <div class="r">One assistant across the full desk, or two specialists — one per side.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON ================= -->
+<section class="compare">
+  <div class="wrap">
+    <div class="sec-label"><div class="t">The actual comparison</div><div class="r"></div></div>
+    <h2>What you're really choosing between.</h2>
+    <p class="intro">You've been putting off a resourcer hire for a while now. Here's the decision as it actually sits.</p>
+    <div class="cols">
+      <div class="col">
+        <div class="k">Option A</div>
+        <h3>A resourcer on payroll</h3>
+        <ul>
+          <li>Salary, plus employer NI or payroll tax</li>
+          <li>Pension, holiday, sick cover</li>
+          <li>Desk, laptop, software seats</li>
+          <li>Weeks to hire, ~3 months to ramp</li>
+          <li>You write the training</li>
+          <li>You manage them, daily</li>
+          <li>If it doesn't work, you carry it</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="k">Option B</div>
+        <h3>A $100K ops hire</h3>
+        <ul>
+          <li>Six figures all-in before tooling</li>
+          <li>Needs a defined role to step into</li>
+          <li>Generalist — not recruiting-native</li>
+          <li>Long notice periods both ways</li>
+          <li>A serious bet for a firm under 20 heads</li>
+          <li>Still needs your systems built first</li>
+        </ul>
+      </div>
+      <div class="col win">
+        <div class="k">Option C</div>
+        <h3>Recruit Assist</h3>
+        <ul>
+          <li>One flat monthly fee</li>
+          <li>No employer costs of any kind</li>
+          <li>Trained on recruitment before day one</li>
+          <li>Systems and tooling included</li>
+          <li>Managed by us, not by you</li>
+          <li>Replaced if the fit is wrong</li>
+          <li>90-day terms, buy-out path</li>
+        </ul>
+      </div>
+    </div>
+    <div class="close">You're not comparing us to a VA. You're comparing us to <em>the resourcer you can't quite justify yet</em> — at a fraction of the cost, with none of the employment risk.</div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-label"><div class="t">Pricing</div><div class="r"></div></div>
+    <h2>One price. One unit. No tiers.</h2>
+    <div class="prow one">
+      <div class="who"><div class="k">Option 1</div><div class="n">One assistant</div></div>
+      <div class="price">$1,500<span>per month</span></div>
+      <div class="what">One trained assistant, ~40 hrs/week, on <b>either half</b> — or splitting their week across both, if that's what the desk needs.</div>
+    </div>
+    <div class="prow two">
+      <div class="who"><div class="k">Option 2</div><div class="n">Two assistants</div></div>
+      <div class="price">$3,000<span>per month</span></div>
+      <div class="what">One on <b>Win The Work</b>, one on <b>Fill The Work</b>. The full desk covered, with neither side ever waiting on the other.</div>
+    </div>
+    <div class="pincl">Every engagement includes <b>the training, our systems and campaign stack, our management, replacement if the fit is wrong, and 90-day terms.</b> There is nothing else to buy.</div>
+    <div class="pmath">$1,500/mo is $18,000 a year. A resourcer on a $55,000 salary costs roughly $70,000 once employer taxes, pension, holiday, desk and software seats are counted — before three months of ramp.</div>
+  </div>
+</section>
+
+<!-- ================= DELIVERY ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-label"><div class="t">How it's delivered</div><div class="r"></div></div>
+    <div class="deliv">
+      <div class="d hero-item"><span class="ck">✓</span><span class="tx"><b>Managed by us — you get output, not a management job</b></span></div>
+      <div class="d"><span class="ck">✓</span><span class="tx"><b>Trained on recruitment</b> before they ever reach you</span></div>
+      <div class="d"><span class="ck">✓</span><span class="tx"><b>One assistant, ~40 hrs/week,</b> working only on your desk</span></div>
+      <div class="d"><span class="ck">✓</span><span class="tx"><b>Our systems and campaign stack</b> included — nothing to licence</span></div>
+      <div class="d"><span class="ck">✓</span><span class="tx"><b>Live work inside two weeks</b> — no job spec, no interviews, no ramp</span></div>
+      <div class="d"><span class="ck">✓</span><span class="tx"><b>90-day terms</b> — replaced if the fit's wrong, buy-out path if it's right</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-label"><div class="t">Your first two weeks</div><div class="r"></div></div>
+    <div class="tl">
+      <div class="step"><div class="day">Day 1</div><div class="what"><b>Desk audit</b>Which side is blocked, what you run, what good looks like.</div></div>
+      <div class="step"><div class="day">Days 2–4</div><div class="what"><b>Match &amp; brief</b>We assign and brief your assistant before you ever meet them.</div></div>
+      <div class="step"><div class="day">Day 5</div><div class="what"><b>Introduction</b>You meet them. Access granted, shared channel opened.</div></div>
+      <div class="step"><div class="day">Days 6–10</div><div class="what"><b>First work ships</b>Adverts, ATS clean-up, first campaign built and live.</div></div>
+      <div class="step"><div class="day">Days 11–14</div><div class="what"><b>Cadence set</b>Daily written update, weekly review. Then it just runs.</div></div>
+    </div>
+    <div class="tl-note">You never write a job spec, never run an interview, and never have to let anyone go.</div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="sec-label"><div class="t">The four questions everyone asks</div><div class="r"></div></div>
+    <div class="faq">
+      <h3>“I've tried a VA before and it was more work than it saved.”</h3>
+      <p>Almost everyone has, and it's usually true. A general assistant arrives with no context, so you become their trainer and their manager. Ours arrive trained on recruitment process, already inside our systems, and <b>we manage them.</b> The difference isn't the person — it's everything wrapped around them.</p>
+    </div>
+    <div class="faq">
+      <h3>“How do I know they'll be any good?”</h3>
+      <p>We recruit and vet against a recruitment-specific bar, train them before they're assigned, and replace them if the fit is wrong. <b>You never run a hiring process and never have to let anyone go.</b></p>
+    </div>
+    <div class="faq">
+      <h3>“What if my process is different?”</h3>
+      <p>It will be. The first week is spent learning your desk — your ATS, your templates, your tone, your definition of a good candidate. They work your way, not a generic way.</p>
+    </div>
+    <div class="faq">
+      <h3>“What happens to my data and my candidates?”</h3>
+      <p>They work inside your systems, under your access controls, and everything they build stays in your ATS. <b>You own all of it.</b></p>
+    </div>
+
+    <div class="xref">
+      <div class="k">If capacity isn't actually the problem</div>
+      <h3>The Unreplaceable Recruiter</h3>
+      <p>Some firms don't need more hours — they need a reason to be chosen. If you're losing pitches to firms that look identical to you on paper, that's a positioning problem, and it's a different programme. It carries a $50,000 / 90-day pipeline guarantee.</p>
+      <a href="#">See The Unreplaceable Recruiter →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSE ================= -->
+<section class="final" id="audit">
+  <div class="wrap">
+    <div class="eyebrow k">What happens next</div>
+    <h2>Stop choosing between BD and delivery.</h2>
+    <p>Twenty minutes is enough to work out which side of your desk to take back first. If the honest answer is that you don't need us yet, that's what you'll hear.</p>
+    <div class="acts">
+      <a class="btn" href="#">Book a desk audit</a>
+      <a class="btn ghost" href="#">Download the one-pager</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div>Recruit Assist — by AI Integraterz</div>
+  <div>aiintegraterz.com</div>
+</div></footer>
+
+</body></html>

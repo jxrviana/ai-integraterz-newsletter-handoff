@@ -1,0 +1,33 @@
+# --- PII: real email addresses / lead + contact data — NEVER commit ANY csv ---
+leads/
+*.csv
+
+# --- Build previews (embed base64 images; not needed for context) ---
+*preview*.html
+
+# --- Secrets ---
+.env
+*.env
+**/secret*
+**/*credential*
+
+# --- Large binary assets (not needed for context; regenerated locally) ---
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+
+# --- Build artifacts / archives ---
+*.zip
+_archive/
+
+# --- OS cruft ---
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# --- Separate projects / embedded repos (not part of the newsletter pipeline) ---
+Overdeliver Mail Agency/
+The Open Source/
+Scraping Leads/
