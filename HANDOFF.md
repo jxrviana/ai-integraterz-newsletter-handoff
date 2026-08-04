@@ -1,5 +1,27 @@
 # HANDOFF — Current State
 
+## ★ AUG 5 (LATEST) — NEW DIRECTION from Justin's huddle (read first)
+
+**Full capture + verified: `MEETING-TAKEAWAYS-2026-08-04.md`. The newsletter model now lives in `skills/` (updated to this).**
+
+**The pivot:** every newsletter is its own **distinct publication** — different fonts, colors, logo, images, layout, topics; no shared "footprint" (a reader who gets two the same day must never guess one sender). Universal: **white background, wider layout**; keep the formatting craft. The **one-locked-template** approach is RETIRED. Justin's 4 **types**: editorial/informational · independent-news · storytelling · promotional (`skills/general/newsletter-types.md`).
+- **The Dealmaker** → editorial/informational (Brian Kurtz; Jay Abraham preeminence). ✅ Issue 1 SENT (old direct-response, 18,953); Issue 2 pivots + redesign.
+- **The Referral Channel** → editorial/independent-news; must look completely different from the Dealmaker. ✅ Issue 1 SENT (18,565); next issue redesign.
+- **Local Affiliate Pro** → story/StoryBrand (local businesses take back their power). Old deals-roundup SCRAPPED; rebuild story-first.
+- **The Open Source** → NEW; editorial/informational via Donald Miller storytelling; anti-big-AI superhero theme; built off Justin's GitHub (github.com/jbellsolutions).
+- **Niche/industry** (Front Desk, Protocol, Green Room, People Person, Daily Sun, Agency Insider) → **PURE EDUCATION — no offer, no native card, no CTA** (trust-builders). Flagships + LAP keep a mission-framed CTA.
+- **Main Street Affiliate** → story flagship (Beehiiv opt-in). ⬜ To build.
+
+**Roles:** Xander owns content/copy/editorial/storytelling; **Justin owns deliverability + SMTP + deals**. **SendFox is now an active send channel** (+ SendGrid later). **Focus niches:** health + funding + local.
+
+**Both flagships SENT Aug 4** to the ~19k (Dealmaker via Resend 18,953; Referral via Bird 18,565). ⚠️ **ListMonk shows 0 bounces AND 0 opens/clicks — both are BLIND SPOTS, not real zeros:** no ESP→ListMonk bounce webhook (real bounces live in the Resend/Bird dashboards), and ListMonk open/click tracking is misconfigured. Stats pull + tracking fix pending (`_send-to-singlebrain/SINGLEBRAIN-campaign-stats-and-tracking-diagnosis.md`).
+
+**Copywriting swipe file** added: `UItimate Swipe File/` (Jay Abraham, Brian Kurtz, StoryBrand, Story Sales Machine, referral/partnership) — index at `skills/general/07-swipe-file-index.md`. The copywriter-persona ecosystem is **Justin's build**.
+
+**Skills library updated** (`skills/`): 5 newsletter skills rewritten + general skills annotated + README/newsletter-types/04-design/07-swipe-file-index; `CLAUDE.md` updated. The 5 niche re-skins from earlier Aug 4 are moot (no universal template) — niches now need their own pure-education identities.
+
+---
+
 **As of: Tuesday, 4 August 2026 — EOD.** Big change: after Justin's Aug-1 huddle + screenshot, the affiliate program is run as **three newsletter brands** with a clearer split — **Main Street Affiliate = a NEW Beehiiv opt-in flagship** (future), and the two **outbound** brands are **The Referral Channel** (editorial) + **The Dealmaker** (direct — the newsletter we built as "Main Street Affiliate," **renamed + rebranded Aug 1**). Footer social links **stripped** from both outbound builds.
 
 > **New source of truth: `newsletters/00-SOURCE-OF-TRUTH.md`** (consolidates the Aug-1 screenshot + huddle; screenshot wins on conflicts). Per-newsletter specs live in `newsletters/`. `NEWSLETTER-PRIORITIES.md` is superseded by it.

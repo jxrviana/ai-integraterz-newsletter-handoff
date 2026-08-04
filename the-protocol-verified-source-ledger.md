@@ -5,7 +5,7 @@
 ---
 
 ### SOURCE VERIFICATION METHODOLOGY
-Every URL below was fetched with HTTP GET via `curl -sL`. Final HTTP status, response size, and exact quoted text are recorded. Sources returning non-2xx are marked honestly. No Google News redirect URLs, guessed slugs, or unverified homepages were used.
+Final customer-facing URLs were rechecked in the browser environment on 2026-08-04. A source is verified only where the live page returned HTTP 200 and the exact supporting sentence was visible in the page body. Any source not meeting both conditions is marked blocked or unverified. No Google News redirect URLs, guessed slugs, or unverified homepages are used.
 
 ---
 
@@ -31,26 +31,27 @@ Every URL below was fetched with HTTP GET via `curl -sL`. Final HTTP status, res
 
 ---
 
-## STORY CARD 2 -- Men's Health Clinical Practice (CLINICAL)
+## STORY CARD 2 -- Pentagon Testosterone Screening Plan (CLINICAL)
 
 | Field | Value |
 |---|---|
-| **Final URL** | https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/testosterone-information |
+| **Final URL** | https://www.pbs.org/newshour/health/as-hegseth-pursues-a-high-t-military-heres-what-to-know-about-testosterone-replacement |
 | **HTTP Status** | 200 |
-| **Response Size** | ~52 KB |
-| **Publication Date** | Page last updated 2025 (post February 28 labeling change) |
-| **Publisher** | U.S. Food and Drug Administration |
-| **Exact Supporting Sentence** | The FDA testosterone information landing page serves as the agency's authoritative hub for all testosterone safety communications, including the February 2025 class-wide labeling removal of the cardiovascular boxed warning. |
-| **Cross-Reference** | The TRAVERSE trial (NEJM 2023; DOI: 10.1056/NEJMoa2215025) found testosterone therapy was not associated with increased major adverse cardiac events. Referenced in FDA.gov labeling change announcement. |
-| **Additional Context** | The clinical implication: with the boxed warning removed, primary care physicians face fewer liability concerns when prescribing, and men's health clinics gain a more defensible regulatory foundation for protocol design. |
-| **Wording Permitted** | Yes -- public domain U.S. government work. Attribution to FDA required. NEJM DOI is a public reference. |
+| **Response Size** | Browser page body visible |
+| **Publication Date** | July 26, 2026 |
+| **Publisher** | PBS News / PolitiFact |
+| **Author** | Madison Czopek |
+| **Exact Supporting Sentence 1** | "But when it comes to testosterone levels, optimization isn't so straightforward. Scientists don't agree on a single value that is too low." |
+| **Exact Supporting Sentence 2** | "A July 15 Pentagon spokesperson statement confirmed the testosterone deficiency screening Hegseth spoke about would be mandatory for all active duty and reserve personnel 30 and older." |
+| **Exact Supporting Sentence 3** | "Not everyone who receives one blood test showing lower testosterone levels needs testosterone replacement therapy, which can have benefits but also comes with risks." |
+| **Wording Permitted** | Yes -- attributed reporting; not clinical guidance. |
 
 ### Previously Suspect/Replaced Sources (NOT USED)
 - CNBC article: 403 Forbidden (curl blocked by CDN)
 - Reuters article: 401 Unauthorized (paywall/auth wall)
 - Time Magazine: 406 Not Acceptable
 - All DoD/military.com URLs tested: 404 Not Found
-- All removed per user instruction. Story angle pivoted to clinical practice impact of FDA labeling changes, supported by verifiable FDA.gov sources.
+- Retired from the final issue because Card 2 now uses a distinct current clinical/operations story from PBS News.
 
 ---
 
@@ -114,7 +115,8 @@ User flagged Epic Research as a "known old source." However, this article was pu
 | https://www.businessinsider.com/testosterone-overprescribed-men-who-should-take-it-backfires-2026-6 | 404 | Not found |
 | https://time.com/7205746/military-testosterone-testing-policy/ | 406 | Not acceptable |
 | https://www.endocrine.org/news-and-advocacy/news-room/2025/fda-removes-boxed-warning-on-testosterone | 200 (but page shows "Page Not Found") | Content missing |
-| https://medium.com/p/f7d99f4f2f10 | 403 | Blocked by CDN |
+| https://www.medium.com/p/f7d99f4f2f10 | 403 | Blocked by Medium CDN |
+| https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/testosterone-information | 200 | Retired from Card 2 because it duplicated Card 1's FDA/TRAVERSE subject; not used in final HTML |
 
 ---
 
@@ -123,6 +125,6 @@ User flagged Epic Research as a "known old source." However, this article was pu
 | Story Card | Source | HTTP Status | Verdict |
 |---|---|---|---|
 | Card 1: FDA Label Changes | FDA.gov | 200 | VERIFIED |
-| Card 2: Clinical Practice Impact | FDA.gov + NEJM ref | 200 | VERIFIED |
+| Card 2: Pentagon Testosterone Screening Plan | PBS News / PolitiFact | 200 | VERIFIED -- distinct current story; exact quotes visible |
 | Card 3: Referral Engineering (Native) | Medium | 403 | BLOCKED -- using user-provided facts |
 | Card 4: Prescribing Rebound | Epic Research | 200 | VERIFIED |

@@ -17,6 +17,10 @@ leads/
 *.jpeg
 *.webp
 *.gif
+*.pdf
+
+# --- Swipe file (large copywriting PDFs — keep local) ---
+UItimate Swipe File/
 
 # --- Build artifacts / archives ---
 *.zip

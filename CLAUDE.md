@@ -41,16 +41,23 @@ Justin's directive, on the MyClaw newsletter he sent as reference: their own pro
 
 ## THE NEWSLETTERS
 
-**Full specs live in `newsletters/` — this is the summary.** The affiliate program is the offer for all of them.
+> **★ NEW DIRECTION (Aug 4–5 huddle — supersedes the older format/offer rules further down this file). Full capture: `MEETING-TAKEAWAYS-2026-08-04.md`. Per-newsletter detail: `skills/newsletters/`.**
 
-**Three affiliate flagships** (one master list, split-tested):
-1. **Main Street Affiliate** — Beehiiv **opt-in** flagship / front door. ⬜ To build (future — Beehiiv not set up yet).
-2. **The Referral Channel** — **editorial** outbound. ✅ Built.
-3. **The Dealmaker** — **direct-response** outbound (JV / power-partner angle). ✅ Built (the newsletter formerly named "Main Street Affiliate," renamed Aug 1).
+**Every newsletter is its own DISTINCT PUBLICATION** — its own persona, mission, and look (fonts, colors, logo, images, layout, topics). No shared "footprint": someone who receives two in a day must never guess they're from the same sender. **Keep the formatting craft** (good-morning intro, bolds, text blocks, Short Version/Details/Why It Matters, quote blocks) — change the LOOK + identity per newsletter. Universal: **white background, wider layout.** The old "one locked Front Desk template for all niches" is **RETIRED.**
 
-**Niche tier** (2nd-tier split-test; each CTA → the affiliate program): The Protocol (men's health — coaching + clinics), The People Person (recruiting), The Green Room (PR — best performer), The Daily Sun (solar), Agency Insider (marketing + AI agencies), plus gyms + tech-b2b (unbuilt). The Bow-legged Mechanic (HVAC) exists but HVAC isn't in the current 8-niche list. Each niche has a stub in `newsletters/niche-*.md`.
+**Newsletter types (Justin's taxonomy):** editorial/informational (MyClaw) · editorial/independent-news (Substack — Zeteo, Breaking Points) · storytelling (Bill Mueller / Story Sales Machine) · promotional (Sendivo).
 
-> The 8 current niches: PR agencies · solar · recruiting/staffing · men's-health coaching · tech-b2b · marketing/AI agencies · gyms · men's-health clinics.
+**The newsletters + type/mission:**
+- **The Dealmaker** — *editorial/informational, Brian Kurtz style.* Jay Abraham + "preeminence." ✅ Issue 1 sent (old direct-response version); Issue 2 pivots. `skills/newsletters/the-dealmaker.md`
+- **The Referral Channel** — *editorial/independent news.* Must look completely different from the Dealmaker. ✅ Issue 1 sent; next issue redesigned. `skills/newsletters/the-referral-channel.md`
+- **Local Affiliate Pro** — *story/StoryBrand.* Mission: local "Main Street" businesses take back their power (networking→affiliate); breaking free of Big-Tech ads. (Scrap the old deals-roundup.) `skills/newsletters/local-affiliate-pro.md`
+- **The Open Source** — *editorial/informational via Donald Miller storytelling. NEW — to build.* Superhero / anti-big-AI; a small group giving AI away free; built off Justin's GitHub (github.com/jbellsolutions). `skills/newsletters/the-open-source.md`
+- **Main Street Affiliate** — *story / Story Sales Machine.* The Beehiiv **opt-in** flagship. ⬜ To build.
+- **Niche / industry newsletters** — The Front Desk (gyms), The Protocol (men's-health coaching), The Green Room (PR), The People Person (recruiting), The Daily Sun (solar), Agency Insider (marketing/AI). *Editorial/informational.* ⚠️ **PURE EDUCATION — NO advert, NO bottom CTA, NO native affiliate card.** Job = build trust only; conversion happens elsewhere. Each gets its own look.
+
+**Focus niches going forward:** HEALTH (coaches/clinics) + FUNDING (7-figure) + LOCAL affiliates (solar / home services). PR + others kept only for engagement.
+
+**Roles:** **Xander owns content/copy/editorial/storytelling/mission; Justin owns deliverability + SMTP + deals.**
 
 ---
 
@@ -68,7 +75,7 @@ Justin's directive, on the MyClaw newsletter he sent as reference: their own pro
 
 ## KEY FACTS AND LINKS
 
-- Footer brand = **the newsletter's own name** (e.g. "The Dealmaker"), not "AI Integraterz". Keep the legal line *"Published by AI Integraterz"* + the physical address for CAN-SPAM. **No social links in the footer** (playbook rule 25).
+- Footer brand = **the newsletter's own name** (e.g. "The Dealmaker"), not "AI Integraterz". **NEVER print "Published by AI Integraterz" — or "AI Integraterz" in any form — anywhere in a newsletter** (all AII branding stripped; Xander, 2026-08-04). Keep **only the physical address** for CAN-SPAM compliance (the address alone satisfies the law). **No social links in the footer** (playbook rule 25).
 - Legal entity: **AI Integraterz** · Physical address: **37460 Beacon Brick Road, Zephyrhills, Florida 33541**
 - Case studies (both verified live; web pages despite the `.pdf` extension):
   `https://aiintegraterz.com/case-studies/mens-health.pdf` · `https://aiintegraterz.com/case-studies/recruiting.pdf`
@@ -86,6 +93,8 @@ Research (Opus agent, verified sources) → markdown draft against the playbook 
 ---
 
 ## THE FORMAT (summary — full spec in `NEWSLETTER-PLAYBOOK.md`)
+
+> ⚠️ **Superseded (Aug 4–5): the below is the OLD universal editorial news-card format — it no longer applies to every newsletter.** Format now varies by TYPE (story/StoryBrand for Local Affiliate Pro & Main Street; independent-news for The Referral Channel; Donald-Miller storytelling for The Open Source). **Niche/industry newsletters are now pure education: NO card-3 native ad, NO mention budget, no bottom CTA.** Per-newsletter format lives in `skills/newsletters/`. The formatting *craft* described below (card structure, Short Version/Details/Why It Matters, sign-off) still applies wherever a news-card format is used.
 
 Masthead with brand emoji, tagline, issue number, lead headline, byline, Read Online | Unsubscribe → banner image → greeting → one POV thesis line → bulleted table of contents → dark divider bar → **six story cards** → utility segment that teaches something free → house blurb → Keep Reading strip → named sign-off → compliant footer with physical address and unsubscribe.
 
