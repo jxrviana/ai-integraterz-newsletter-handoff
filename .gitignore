@@ -35,3 +35,18 @@ desktop.ini
 Overdeliver Mail Agency/
 The Open Source/
 Scraping Leads/
+
+# --- Credential / key files (NEVER commit) — added Aug 6 ---
+*Keys.txt
+*Keys
+Sendy Keys.txt
+*.key
+*_key
+sendy-keys*
+
+# --- Raw meeting transcripts (personal + business content — keep local) ---
+*Transcript*.txt
+*Huddle*.txt
+
+# --- Local source assets (images already ignored by extension) ---
+_raw-assets/

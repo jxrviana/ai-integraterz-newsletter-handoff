@@ -1,6 +1,51 @@
 # HANDOFF — Current State
 
-## ★ AUG 5 (LATEST) — NEW DIRECTION from Justin's huddle (read first)
+## ★ AUG 6 (LATEST) — 4 newsletters FINALIZED + zipped, drafting in ListMonk
+
+**Staying on ListMonk** (Justin: Sendy too complex for Xander right now — Sendy + Velocity on hold). All 4 are **built, image-complete, zipped, ready to DRAFT (not send):** the Dealmaker Issue 2, The Open Source Issue 1, The Referral Channel Issue 2, Local Affiliate Pro Issue 1. Handoff: `_send-to-singlebrain/SINGLEBRAIN-draft-4-newsletters-listmonk.md` (draft-only).
+
+**Design directions applied faithfully** (Xander supplied HTML templates; we kept style/colors/fonts, stripped the source brand, added no invented slop): Dealmaker → clean beehiiv-style, byline **Johana Buitrago**; Open Source → PhantomBuster-style, byline **Theo Marsh**, credits **Nous Research** (hermes-agent links → `nousresearch/hermes-agent`; footer keeps `github.com/jbellsolutions` as the one exposure line) + a generated logo; Referral → its **Issue 1 design reused**, byline **Jay Bell**; LAP → locked Angliss template, byline Jordan Reyes.
+
+**Images:** all Xander-generated to the elevated editorial standard (no literal-metaphor slop, no blank paper), wired email-weight. **Copy craft added:** greeting now **`Hi {{ FirstName }},` + fallback** (not "good morning"); **restrained emphasis** (bold key stats/thesis + one accent phrase). Rules captured in `skills/general/01-creation-and-QA.md` + `05-images.md`.
+
+**⚠️ Send gate (none SEND yet):** LAP → `localaffiliatepro.com` Safe-Browsing-flagged (draft OK, no send until Justin clears it). Dealmaker + Referral → `whimsy-nebula-47ch.here.now` ephemeral (verify before send). Open Source → clean (GitHub). All await Justin's branded CTA domain.
+
+**Warm-up (planned, ListMonk):** `send.usingaitoscale.com` is NOT cold (~37k sent, good auth/IP). Real gate = clean CTA links + list hygiene. Plan: ~250/newsletter/day, Open Source first (clean CTA), hold consistent, ramp ~30–50%/week, verify lists (bounce <1%) + mail-tester each send. Runbook TBD. Domain how-to: `docs/DOMAIN-WARMING-SOP.md`.
+
+---
+
+## ★ AUG 5 (EVENING, post-huddle) — SUPERSEDES the block below where they conflict
+
+**➡️ Full running plan: `RUNNING-TASKS.md` (root). Domain how-to: `docs/DOMAIN-WARMING-SOP.md`.**
+
+**Platform shift — Sendy is the new PRIMARY** (self-hosted, $69 one-time, `sendy.usingaitoscale.com`). Reason: it records **per-campaign stats (opens/clicks/bounces)** — the thing ListMonk can't do. **Transferring ListMonk → Sendy.** Sends via own SMTP (Justin configures, UI-only) + SES backup; stats read from MySQL over SSH (SELECT-only agent). **Priority order now: Sendy → SendFox → Velocity.** SendFox = **blocked on payment** (AppSumo Lifetime→Pro upgrade bug; support emailed, Xander CC'd). Velocity/edcom = **least priority, don't touch** (Justin still updating it). *(This corrects the block below, which said "use SendFox now / Velocity plug-in.")* Handoff pages: Sendy `mossy-quarry-84pj.here.now`; verification playbook `grassy-lotus-k454.here.now`.
+
+**Deliverability is now a discipline (the `localaffiliatepro.com` lesson):**
+- The LAP link got **flagged by Google Safe Browsing + Razor2** (mail-tester) because we blasted ~18.5k on a **brand-new, unwarmed domain**. Auth (SPF/DKIM) + IP reputation were fine — the burned **link** was the whole problem. **LAP is HELD** until Justin clears the flag (Search Console review) or gives a clean CTA URL. Brief: `messages/TO-JUSTIN-deliverability-localaffiliatepro-flag.md`.
+- **Systemic:** the standard CTA `whimsy-nebula-47ch.here.now` (on the Dealmaker + Front Desk + every niche) is the **same ephemeral-host risk**. Real fix = one stable branded CTA (`mainstreetaffiliate.com`) for all titles — Justin.
+- **New rules:** bounce **<1%**, complaints **<0.1%**; **verify every list before send**; **never send From `@usingaitoscale.com`**; **warm every new domain** (buy on Justin's **Spaceship**, ~$10–20, he does DNS auth, then automated warmup — MailReach/Mailreef); always be warming + hold consistent daily volume. New QA gate (link-reputation check) added to `skills/general/01-creation-and-QA.md`.
+
+**Roles (Justin's words):** **Xander = content (newsletters) + ops + recruiting + client management. Justin = deliverability + technical + domains/DNS.** Keep heavy deliverability with Justin.
+
+**LAP manual send:** built correctly in ListMonk (draft, template "The Dealmaker Raw Complete HTML", 4 images hosted + rendering) — held only on the flagged link. ListMonk-ready HTML: `ready-to-send/local-affiliate-pro/index-listmonk.html`.
+
+---
+
+## ★ AUG 5 (LATEST) — stats in, new platforms, LAP template
+
+**Both flagships' REAL stats (from the ESP dashboards — ListMonk can't see bounces/opens):** The Dealmaker (Resend) ~98.9% delivered / 1.1% bounce / 0.01% complaints; The Referral Channel (Bird) ~98.3% / 1.7% bounce / 0 complaints. **Healthy sends.** ⚠️ **Opens/clicks = 0 because tracking is BROKEN** (ListMonk pixel/link misconfigured; Bird had track_opens off) — not real zero engagement. Fix + Resend→ListMonk bounce webhook pending: `_send-to-singlebrain/SINGLEBRAIN-fix-tracking-and-stats.md`. Per-campaign stat method = filter the ESP dashboard by From + subject + date (not baseline-diff).
+
+**New sending platforms (Justin's lane):** **SendFox** (use now — he's upgrading it; ⚠️ confirm it accepts custom HTML, not just its builder) + **Velocity MTA** (self-hosted MTA; plug Bird/Resend in as SMTPs). Need from Xander: the SendFox skill + merge-tag syntax + custom-HTML support; Velocity MTA docs/access.
+
+**4 newsletter builds queued** (`_send-to-singlebrain/BUILD-1..4-*`): Dealmaker Issue 2, Local Affiliate Pro, The Open Source, Referral Issue 2 — send AFTER SingleBrain adopts the new skills (`SINGLEBRAIN-skills-NEW-direction-replace.md`; SingleBrain's skills had reverted to the OLD direction).
+
+**Local Affiliate Pro template — ✅ LOCKED.** Xander supplied his own design (a bold "magazine" template: dark photo hero with the headline overlaid, orange logo box top-left inset, condensed headlines, an orange bar, a dark footer). LAP is built on it as **email-safe HTML** (tables + inline CSS + Arial-Narrow condensed stack — NOT Tailwind) and a **continuous story** (lead → 3 illustrated beats, no per-section buttons → one CTA). **4 images wired** (email-weight; hero darkened left/bottom for the overlay). **CTA = `https://localaffiliatepro.com/agencies/`.** Byline Jordan Reyes; From `local-affiliate-pro@send.usingaitoscale.com`. Locked file: `ready-to-send/local-affiliate-pro/index.html` (+ `images/` + `image-prompts.md`). **Future issues = change the issue number + story + 4 fresh images only; layout stays.** At send, image `src` → hosted ESP URLs.
+
+**★ RULE — a different physical address per newsletter** (no shared footprint). ⚠️ Each must be a **REAL** address the business controls (P.O. box / virtual mailbox) — **a fabricated address is a CAN-SPAM violation AND a deliverability red flag; never invent one** (unlike bylines, which are personas). Justin to set up per-brand mailing addresses. Until then all newsletters keep the real `37460 Beacon Brick Road, Zephyrhills, FL 33541` (LAP currently uses it).
+
+---
+
+## ★ AUG 5 — NEW DIRECTION from Justin's huddle (read first)
 
 **Full capture + verified: `MEETING-TAKEAWAYS-2026-08-04.md`. The newsletter model now lives in `skills/` (updated to this).**
 

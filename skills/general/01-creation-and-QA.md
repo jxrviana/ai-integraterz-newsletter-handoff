@@ -31,6 +31,19 @@
 - Email-safe: 600px tables, inline styles, ASCII/HTML entities, one hidden preheader, merge tags `{{ MessageURL }}` / `{{ UnsubscribeURL }}` (no dot).
 - TOC must match the actual cards (no dangling references).
 
+## Deliverability & link reputation (BLOCKERS — added Aug 5 after the Local Affiliate Pro spam/flag incident)
+- **Check every link's domain reputation BEFORE any send — not just that it loads.** One flagged link sends the whole email to spam.
+  - Check each CTA / link domain at `transparencyreport.google.com/safe-browsing/search`. If it shows **"unsafe," DO NOT send** — it must be de-listed first (the domain owner requests a review in Google Search Console).
+  - Run the campaign through **mail-tester.com** and read the report: SpamAssassin score, SPF/DKIM/DMARC, and especially **blocklist / Razor2 hits on the links** (a "Razor2 100%" hit = the content/links are already fingerprinted as spam).
+- **No ephemeral / random-subdomain hosts as CTAs.** `*.here.now` preview URLs (e.g. `whimsy-nebula-47ch.here.now`, `aware-quarry-prs5.here.now`) and free-PaaS subdomains (e.g. the `*.up.railway.app` ListMonk host used for links/images/unsubscribe) read as phishing to spam filters. Use a stable, branded domain the business owns.
+- Link/host reputation is a **domain-owner (Justin) fix, not a copy fix** — flag it and hold the send; never blast a list through a flagged link.
+
+## Design + copy craft (BLOCKERS — Aug 6 lessons)
+- **Apply a supplied design template FAITHFULLY.** When Xander gives a design direction (an HTML template), keep its style, layout, fonts, colors, formatting, spacing, and component types. Pour our content into ITS components. **Strip 100% of the template's original brand** (name, logos, people, addresses, images, copy). **Remove** template parts we can't fill; you may **add** only something simple + relevant that fits an existing slot. **Do NOT invent design elements** — no left-border quote bars, no colored callout boxes, no dark panels, no dividers that aren't in the original. Invented decoration = AI slop. If it isn't in the template, don't add it.
+- **Greeting = "Hi {first name}," with a merge tag + fallback** (never "good morning," never a blank "Hi ,"). ListMonk: `{{ if .Subscriber.FirstName }}{{ .Subscriber.FirstName }}{{ else }}there{{ end }}`. Sendy: `[FirstName,fallback=there]`. Confirm the list carries first-name data. (Headline-led news titles with no greeting line can skip it.)
+- **Emphasis, restrained.** Bold the few highest-value phrases (key stats, the one-line thesis) so a skimmer catches them, plus the design's accent color on ~1 phrase per issue. 3–4 emphases per issue, max — not a highlighter dump.
+- **Images:** editorial craft, never literal-metaphor AI slop; never blank paper (see `05-images.md`).
+
 ## THE QA CHECKLIST — fill PASS/FAIL + evidence; attach as the QA report
 **A. Sourcing (BLOCKER):** every link browser-loads (list URL+status) · each is the specific article · each cited claim is on the page (quote it) · every story ≤~60 days (list dates) · no duplicate stories.
 **B. Native card (BLOCKER):** real `<a>` to the Medium article · framework/claims match the article (nothing invented) · themed to niche + offer · $13.81B attributed correctly.
@@ -38,5 +51,7 @@
 **D. Format (BLOCKER):** TOC matches cards · exactly 2 offer mentions · email-safe HTML (600px, inline, ASCII, one preheader, correct merge tags).
 **E. Design:** built on the locked Front Desk template; not redesigned.
 **F. Hygiene:** file differs from prior version · image prompts included · QA report attached · no auto-send.
+**G. Deliverability / link reputation (BLOCKER):** every CTA/link domain checked on Google Safe Browsing (not flagged) · campaign run through mail-tester (score + SPF/DKIM/DMARC + no Razor2/blocklist hit on links) · no ephemeral `*.here.now` / free-subdomain CTA.
+**H. Design + craft (BLOCKER on redesigns):** supplied design applied faithfully (source brand 100% stripped; no invented elements/slop) · greeting = `Hi {first name}` + fallback (not "good morning") · emphasis restrained (key phrases bold + &le;1 accent-color phrase).
 
 Deliver ONLY when every BLOCKER passes.

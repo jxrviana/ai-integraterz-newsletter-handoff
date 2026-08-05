@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angliss Alumni Newsletter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&family=Playfair+Display:ital@1&display=swap');
+        
+        .font-condensed { font-family: 'Oswald', sans-serif; }
+        .font-body { font-family: 'Roboto', sans-serif; }
+        .font-serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+    </style>
+</head>
+<body class="bg-gray-100 font-body text-gray-800 flex justify-center py-8">
+
+    <!-- Main Email Container -->
+    <main class="w-full max-w-[700px] bg-white shadow-xl overflow-hidden">
+        
+        <!-- Hero Header -->
+        <header class="relative w-full h-[500px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200');">
+            <!-- Dark Gradient Overlay for text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+            <!-- Logo Box -->
+            <div class="absolute top-0 left-8 bg-[#ea6b23] text-white p-3 w-[120px] h-[100px] flex flex-col justify-center">
+                <span class="text-[11px] leading-none mb-1">William</span>
+                <span class="text-3xl font-bold font-condensed leading-none tracking-tight">Angliss</span>
+                <span class="text-[11px] leading-none mt-1 self-end">Institute</span>
+            </div>
+
+            <!-- Hero Typography -->
+            <div class="absolute bottom-10 left-8 pr-8">
+                <h1 class="text-white font-condensed text-5xl md:text-[64px] font-bold uppercase leading-[0.95] tracking-tight">
+                    Angliss <span class="text-[#ea6b23]">Alumni</span><br>
+                    Newsletter<span class="text-[#ea6b23]">.</span>
+                </h1>
+                <p class="text-gray-200 mt-4 text-xl font-serif-italic tracking-wide">
+                    September 2024 Edition
+                </p>
+            </div>
+        </header>
+
+        <!-- Newsletter Content -->
+        <section class="px-8 py-10">
+            <!-- Section Title -->
+            <h2 class="text-[#ea6b23] font-condensed text-2xl md:text-3xl font-bold mb-8 uppercase tracking-wide">
+                Alumni News
+            </h2>
+
+            <!-- Articles List -->
+            <div class="space-y-10">
+                
+                <!-- Article 1 -->
+                <article class="flex flex-col md:flex-row gap-6">
+                    <img 
+                        src="https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&q=80&w=600" 
+                        alt="Assorted gourmet chocolates" 
+                        class="w-full md:w-[220px] h-[220px] object-cover flex-shrink-0"
+                    >
+                    <div class="flex flex-col justify-center py-2">
+                        <h3 class="text-[#ea6b23] font-bold text-[17px] mb-2 leading-tight">
+                            Event: Gourmet Chocolate Tasting
+                        </h3>
+                        <p class="text-[15px] text-gray-700 leading-relaxed mb-5">
+                            Immerse yourself into the world of artisan chocolate as Angliss Alumni and owner of Güras Cacao, Samrat Karki, returns to campus to host a taste-testing session. Register now to secure a spot as they are limited. Tickets cost $5.
+                        </p>
+                        <div>
+                            <a href="#" class="inline-block bg-[#ea6b23] text-white font-condensed px-6 py-2 uppercase font-bold text-sm tracking-wide hover:bg-[#cf5c1b] transition-colors rounded-sm">
+                                Register
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="flex flex-col md:flex-row gap-6">
+                    <img 
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                        alt="Corinne Hurst in hotel lobby" 
+                        class="w-full md:w-[220px] h-[220px] object-cover flex-shrink-0"
+                    >
+                    <div class="flex flex-col justify-center py-2">
+                        <h3 class="text-[#ea6b23] font-bold text-[17px] mb-2 leading-tight">
+                            Corinne Hurst: Conquering Hospitality
+                        </h3>
+                        <p class="text-[15px] text-gray-700 leading-relaxed mb-5">
+                            Since graduating from the Bachelor of Resort and Hotel Management (International Practice), Corrinne is now living her dream working as the Duty Manager at the Adina Apartment Hotel Melbourne.
+                        </p>
+                        <div>
+                            <a href="#" class="inline-block bg-[#ea6b23] text-white font-condensed px-6 py-2 uppercase font-bold text-sm tracking-wide hover:bg-[#cf5c1b] transition-colors rounded-sm">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="flex flex-col md:flex-row gap-6">
+                    <img 
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" 
+                        alt="Graduates celebrating" 
+                        class="w-full md:w-[220px] h-[220px] object-cover flex-shrink-0"
+                    >
+                    <div class="flex flex-col justify-center py-2">
+                        <h3 class="text-[#ea6b23] font-bold text-[17px] mb-2 leading-tight">
+                            Angliss Celebrates New Alumni
+                        </h3>
+                        <p class="text-[15px] text-gray-700 leading-relaxed mb-5">
+                            William Angliss Institute recently celebrated the addition of over five hundred Alumni from the Melbourne and Sydney campuses. Held over numerous days, the graduates were celebrated by their classmates, family, friends and academics.
+                        </p>
+                        <div>
+                            <a href="#" class="inline-block bg-[#ea6b23] text-white font-condensed px-6 py-2 uppercase font-bold text-sm tracking-wide hover:bg-[#cf5c1b] transition-colors rounded-sm">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        
+        <!-- Footer Spacer (Optional for Email clients) -->
+        <footer class="h-8 bg-[#ea6b23] w-full"></footer>
+    </main>
+
+</body>
+</html>

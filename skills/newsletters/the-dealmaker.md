@@ -90,6 +90,9 @@ Hard constraints from Justin (Aug 4):
 ## Source material (Jay Abraham / Brian Kurtz)
 The preeminence + copywriting material lives in the **Ultimate Swipe File** (Jay Abraham preeminence, Brian Kurtz training). **Wait for Xander to place that folder in this working directory before drafting Issue 2's content** — do **not** reconstruct Abraham's teachings or invent quotes from memory. Describe the principle at a high level if needed, but any specific quote or claim must trace to the swipe file or a real fetched source (no-fabrication rule).
 
+## Status (2026-08-06) — Issue 2 FINALIZED
+- **Issue 2 — DONE, zipped, drafting in ListMonk.** The preeminence editorial (Jay Abraham principle + Portsmouth coworking example) poured into a clean **beehiiv-style** template (white, bordered rounded cards, blue `#3b49df` accent, Helvetica) — supplied by Xander, applied faithfully (no invented slop). Byline **Johana Buitrago**. Subject **"The local deal is not the offer."** Greeting **"Hi {{ FirstName }},"**. Two editorial images (warm 2-person conversation + community-space interior). CTA = `whimsy-nebula` placeholder (swap to the branded domain before any send). File: `ready-to-send/the-dealmaker-issue-2/`.
+
 ## Status (2026-08-05)
 - **Issue 1 — SENT.** The **old direct-response letter** version (warm/amber palette) mailed to **~18,953** of the master list. That was the previous direction.
 - **Issue 2 — the pivot.** First issue on THIS direction: **editorial / informational, Brian-Kurtz voice, built around Jay Abraham's preeminence**, with the **new distinct look** (white background, wider layout, new non-generic logo, new non-canned images) — while keeping the formatting craft. Blocked on: Xander dropping the Ultimate Swipe File, then locking the new logo + image set. Build with the general pipeline; QA before any test send.

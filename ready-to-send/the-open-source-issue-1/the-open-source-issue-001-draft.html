@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Source - Issue 1</title>
+</head>
+<body style="margin:0;padding:0;background:#ffffff;color:#151515;font-family:Arial,Helvetica,sans-serif;">
+  <!-- DRAFT ONLY. Replace IMAGE_HERO_URL_PENDING after Xander supplies approved artwork. Confirm byline and From before use. -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+    <tr><td align="center" style="padding:0 12px;">
+      <table role="presentation" width="760" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:760px;background:#ffffff;">
+        <tr><td style="padding:28px 30px 18px;border-bottom:5px solid #185cff;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+            <td style="font-family:Georgia,serif;font-size:30px;line-height:34px;font-weight:bold;color:#111111;">&#9889; THE OPEN SOURCE</td>
+            <td align="right" style="font-size:12px;line-height:18px;color:#5b5b5b;">ISSUE 01<br>{{ MessageURL }}</td>
+          </tr></table>
+          <div style="padding-top:8px;font-size:13px;line-height:20px;letter-spacing:1px;color:#185cff;font-weight:bold;">OPEN-SOURCE AI FOR THE BUSINESSES BIG TECH FORGOT.</div>
+        </td></tr>
+        <tr><td style="padding:24px 30px 0;">
+          <img src="IMAGE_HERO_URL_PENDING" width="700" alt="A small business owner at a workbench while a crew of builders prepares practical open-source tools" style="display:block;width:100%;max-width:700px;height:auto;border:0;background:#eef3ff;">
+        </td></tr>
+        <tr><td style="padding:34px 30px 10px;">
+          <div style="font-size:12px;line-height:18px;letter-spacing:1.5px;color:#e33b2e;font-weight:bold;">THE FIRST ISSUE</div>
+          <h1 style="margin:8px 0 18px;font-family:Georgia,serif;font-size:42px;line-height:48px;color:#111111;">199 projects later, AI is still being sold to enterprise.</h1>
+          <p style="margin:0;font-size:18px;line-height:29px;color:#333333;">Meanwhile, you are the one trying to run a real business with real constraints: limited time, limited staff, and no appetite for another software bill that takes a committee to approve.</p>
+        </td></tr>
+        <tr><td style="padding:22px 30px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:5px solid #e33b2e;padding:16px 18px;background:#fff4f2;font-family:Georgia,serif;font-size:23px;line-height:31px;color:#111111;">You are not waiting for permission to build a better business. You are the person who has to make it work.</td></tr></table>
+        </td></tr>
+        <tr><td style="padding:10px 30px 0;">
+          <h2 style="margin:0 0 12px;font-family:Georgia,serif;font-size:29px;line-height:35px;color:#111111;">The problem is not your ambition.</h2>
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;">The problem is that much of the AI market is packaged for companies with dedicated teams, large budgets, and time to evaluate ten platforms before lunch. Small and local businesses are expected to watch from the sidelines while the tools that could help them are wrapped in enterprise pricing and enterprise complexity.</p>
+          <p style="margin:0;font-size:16px;line-height:27px;color:#333333;">That leaves you with two bad choices: keep doing repetitive work by hand, or pay someone else to build a system you cannot inspect, change, or carry with you.</p>
+        </td></tr>
+        <tr><td style="padding:34px 30px 0;">
+          <div style="font-size:12px;line-height:18px;letter-spacing:1.5px;color:#185cff;font-weight:bold;">THIS ISSUE'S BUILD</div>
+          <h2 style="margin:7px 0 12px;font-family:Georgia,serif;font-size:31px;line-height:37px;color:#111111;">Meet Hermes Agent</h2>
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;">Hermes Agent is a public, MIT-licensed project in the <strong><a href="https://github.com/jbellsolutions/hermes-agent" style="color:#185cff;">jbellsolutions/hermes-agent</a></strong> repository. The repository is a fork of <strong>NousResearch/hermes-agent</strong>, and its README describes it as a self-improving AI agent that can create skills from experience, improve them during use, retain knowledge, search past conversations, and build a deeper model of the person using it.</p>
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;">It is built to live where you already work. The README lists an interactive terminal interface, messaging through Telegram, Discord, Slack, WhatsApp, Signal, and the CLI, scheduled automations, isolated subagents, and multiple terminal backends including local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox.</p>
+          <p style="margin:0;font-size:16px;line-height:27px;color:#333333;">That matters because a small business does not need another impressive demo. You need a system you can run, inspect, and adapt as the work changes.</p>
+        </td></tr>
+        <tr><td style="padding:24px 30px 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#111111;"><tr><td style="padding:22px 24px;color:#ffffff;">
+            <div style="font-size:12px;line-height:18px;letter-spacing:1.4px;color:#8eb0ff;font-weight:bold;">THE DETAILS</div>
+            <p style="margin:10px 0 0;font-size:16px;line-height:27px;">The project documents a quick-install path, a model choice command, tool configuration, gateway setup, a full setup wizard, diagnostics, and an update command. Its package metadata requires Python 3.11 or newer and declares an MIT license.</p>
+          </td></tr></table>
+        </td></tr>
+        <tr><td style="padding:34px 30px 0;">
+          <h2 style="margin:0 0 12px;font-family:Georgia,serif;font-size:29px;line-height:35px;color:#111111;">How it works in plain English</h2>
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;">You give the agent a place to run and connect the model provider you choose. It can then work through the terminal or a messaging channel, remember useful context, schedule recurring jobs, and hand separate workstreams to isolated subagents. The point is not to replace your judgment. The point is to give your judgment a set of tools that keep working after the shop closes.</p>
+          <p style="margin:0;font-size:16px;line-height:27px;color:#333333;">The guide's job is to make the system understandable. Your job is to decide where it earns its place in your business.</p>
+        </td></tr>
+        <tr><td style="padding:34px 30px 0;">
+          <h2 style="margin:0 0 12px;font-family:Georgia,serif;font-size:29px;line-height:35px;color:#111111;">Put it to work</h2>
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;"><strong>Start with one repeated task.</strong> Pick the weekly report, inbox triage, research brief, or follow-up process that consumes time without creating much learning. Write down what “done” looks like. Then ask whether a local or cloud-run agent can perform the repeatable steps while you keep the final say.</p>
+          <p style="margin:0;font-size:16px;line-height:27px;color:#333333;">That is the pattern: one useful task, one transparent workflow, one business owner becoming less dependent on a platform's default way of working.</p>
+        </td></tr>
+        <tr><td style="padding:30px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;"><tr><td style="padding:20px 0;font-size:16px;line-height:27px;color:#333333;"><strong>Build-along tip:</strong> Before installing anything, write the task in three lines: the input, the decision, and the output. If you cannot explain those three lines, the automation is not ready yet.</td></tr></table>
+        </td></tr>
+        <tr><td style="padding:0 30px 30px;">
+          <p style="margin:0 0 16px;font-size:16px;line-height:27px;color:#333333;">The builders are making practical systems available because the future should not belong only to the companies that can afford a private AI department. You bring the problem worth solving. Open source gives you a place to start.</p>
+          <p style="margin:0;font-family:Georgia,serif;font-size:23px;line-height:31px;color:#111111;">The next system you run does not have to come with a boardroom attached.</p>
+        </td></tr>
+        <tr><td style="padding:22px 30px 30px;border-top:5px solid #185cff;">
+          <p style="margin:0 0 5px;font-family:Georgia,serif;font-size:20px;line-height:27px;color:#111111;">Build something useful,</p>
+          <p style="margin:0;font-size:15px;line-height:24px;color:#333333;">Theo Marsh<br>The Open Source</p>
+          <p style="margin:22px 0 0;font-size:12px;line-height:19px;color:#777777;">Source repository: <a href="https://github.com/jbellsolutions/hermes-agent" style="color:#185cff;">jbellsolutions/hermes-agent</a>, inspected August 2026. See more of the builders&rsquo; work at <a href="https://github.com/jbellsolutions" style="color:#185cff;">github.com/jbellsolutions</a>.</p>
+          <p style="margin:20px 0 0;font-size:11px;line-height:17px;color:#777777;">The Open Source<br>37460 Beacon Brick Road, Zephyrhills, Florida 33541<br><a href="{{ UnsubscribeURL }}" style="color:#185cff;">Unsubscribe</a> &nbsp;|&nbsp; <a href="{{ MessageURL }}" style="color:#185cff;">Read online</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

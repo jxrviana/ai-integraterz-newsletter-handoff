@@ -77,6 +77,7 @@ Justin's directive, on the MyClaw newsletter he sent as reference: their own pro
 
 - Footer brand = **the newsletter's own name** (e.g. "The Dealmaker"), not "AI Integraterz". **NEVER print "Published by AI Integraterz" — or "AI Integraterz" in any form — anywhere in a newsletter** (all AII branding stripped; Xander, 2026-08-04). Keep **only the physical address** for CAN-SPAM compliance (the address alone satisfies the law). **No social links in the footer** (playbook rule 25).
 - Legal entity: **AI Integraterz** · Physical address: **37460 Beacon Brick Road, Zephyrhills, Florida 33541**
+- **Address per newsletter (footprint rule):** each newsletter should use its own **distinct REAL** mailing address (a P.O. box / virtual mailbox) so the footers don't share a fingerprint. ⚠️ **NEVER fabricate an address** — unlike a byline (a persona), a footer address is a CAN-SPAM legal requirement and must be a real, deliverable address; a fake one is a federal violation AND a spam-filter red flag. Justin sets up per-brand addresses; until then all newsletters use the real 37460 Beacon Brick Road.
 - Case studies (both verified live; web pages despite the `.pdf` extension):
   `https://aiintegraterz.com/case-studies/mens-health.pdf` · `https://aiintegraterz.com/case-studies/recruiting.pdf`
 - SpeakerAgent AI: `https://speakeragent.ai/`

@@ -93,6 +93,9 @@ Keep the craft; change the shape. Suggested issue architecture:
 
 ---
 
+## Status (2026-08-06) — Issue 2 FINALIZED
+- **Issue 2 — DONE, zipped, drafting in ListMonk.** Byrna / Acceleration-Partners lead + 3 dispatches + mission, poured into **Issue 1's own design** (dark chyron masthead, blue `#2563a8`) per Xander. Byline **Jay Bell**. Subject **"The affiliate link is becoming a newsroom beat."** Lead image (creator-rig-meets-commerce still-life) + logo. `[1]` citation removed; address added; CTA = `whimsy-nebula` placeholder. File: `ready-to-send/the-referral-channel-issue-2/`.
+
 ## Status (2026-08-05)
 
 - **Issue 1: SENT** to ~18,565 of the ~19k master list via Bird (~1.68% bounce, 0 complaints); tracking was off on that send (engagement data lost).

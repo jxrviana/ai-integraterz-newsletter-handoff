@@ -1,0 +1,14 @@
+THE OPEN SOURCE — ISSUE 1 IMAGE PROMPTS
+
+Global art direction for every prompt: wide editorial illustration for a white-background email newsletter, distinct superhero/builder identity, ink black + electric blue + comic red with restrained halftone texture, clean vector-meets-ink treatment, high contrast, spacious composition, no gradients that harm email cropping. Keep the focal subject in the central 70% safe area. NO readable text, NO letters, NO numbers, NO logos, NO brand marks, NO screens, NO paper, NO signs, NO UI, NO watermarks, NO product packaging, NO recognizable real person. Text will be added in HTML.
+
+1) HERO BANNER — LABEL: OPEN SOURCE BUILDER CREW
+Wide 2.4:1 editorial banner. A determined small-business owner in everyday work clothes stands at a bright workbench in a clean white studio, facing forward with calm confidence. Behind and beside them, a small crew of diverse open-source builders in practical workshop clothing pass glowing blue tool components and a simple shield-shaped circuit emblem toward the owner. The owner is the visual hero; the builders are guides, not celebrities. Dynamic comic-book ink lines, electric blue edge accents, small red action marks, restrained halftone dots, white negative space on both sides for email cropping. No capes, no corporate skyscrapers, no villain caricature.
+
+2) IN-STORY VISUAL — LABEL: THE OWNER KEEPS THE KEYS
+Wide 1.7:1 illustration. A local shop owner holds a simple metal key and stands beside a compact transparent toolbox containing modular blue circuit pieces. A builder-guide points to the components while the owner chooses which piece to use. White background, black ink outlines, electric blue and comic red accents, restrained halftone, editorial rather than fantasy. The composition should communicate ownership, inspectability, and practical control without showing any text or interface.
+
+3) OPTIONAL HOW-IT-WORKS VISUAL — LABEL: ONE TASK, ONE WORKFLOW
+Wide 1.7:1 clean editorial diagram-like illustration, but without text or symbols that resemble writing. Show three physical stages left to right: a small pile of incoming work tokens, a transparent blue workflow channel with a builder-guide adjusting one lever, and a neat finished output stack held by the small-business owner. Use abstract shapes only, no screens, no words, no numbers. White background, ink black, electric blue, comic red, sparse halftone details, generous safe margins.
+
+NEGATIVE PROMPT FOR ALL: readable typography, fake UI, text, letters, numbers, logos, watermarks, brand names, website addresses, screenshots, documents, signs, charts, dashboards, stock-photo realism, generic caped superhero, giant robot, corporate boardroom, dark background, clutter, cropped faces, extra fingers, distorted hands.
