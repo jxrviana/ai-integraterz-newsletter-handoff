@@ -63,8 +63,18 @@ Mention discipline: keep the offer light-touch — the value teaches, the CTA cl
 
 ---
 
-## The Look — distinct identity (this is the redesign)
-Hard constraints from Justin (Aug 4):
+## The Look — ★ LOCKED (Aug 6): the "cream-paper editorial" design
+**This IS the Dealmaker's design. Locked. Future issues keep this exact layout — change only the issue content + swap the 2 images.** Template: `ready-to-send/the-dealmaker-issue-2/index.html` (+ `_design-reference.html` = the source Xander supplied).
+- **Background:** warm cream `#f7f4ed` — an open editorial page, **no white cards** (this is what makes it read differently from The Open Source's white cards). *(Overrides the old "white background" note below — Xander's deliberate warm-white choice.)*
+- **Ink/body:** near-black `#232323` for headings + marks; warm gray `#4a4742` for body.
+- **Accent:** terracotta `#b85d3d` (section eyebrows + the one emphasized phrase). Hairline rules `#e5dfd3`.
+- **Type:** **Georgia serif** for the big H1 + the centred quote block + italic sign-off lines; **Helvetica** for body, uppercase letter-spaced section labels, and buttons.
+- **Components — use these, invent nothing else:** circle "D" badge masthead + wordmark + "View online"; a large serif H1; hairline dividers; uppercase section labels; full-width images (radius 4px); a **centred quote block** (use for ONE real, attributed quote — e.g. Amber Spears); a **numbered-list** block (use for the "Monday move" steps); **dark pill** CTA buttons; a centred footer with the "D" badge, an italic-serif tagline line, the physical address, and Unsubscribe | View online — **no socials**.
+- Greeting **"Hi {first name},"** + fallback; restrained emphasis (bold key stats + terracotta on ~1 phrase).
+
+*(Everything below is SUPERSEDED by the locked design above — kept for history only.)*
+
+Old constraints (superseded) — Justin (Aug 4):
 - **WHITE background.** Drop the warm palette entirely: no cream page (`#faf6ef`), no black-brown ink masthead/footer (`#1c1a17`), no amber (`#c07f2a`).
 - **Wider layout.** Move off the narrow 600px centered column → a broadsheet feel (recommend ~**640–680px** content width).
 - **Non-generic logo.** Retire the amber handshake emblem (`images/logo.png`) — it reads generic. Give the Dealmaker a real editorial mark.
@@ -91,7 +101,7 @@ Hard constraints from Justin (Aug 4):
 The preeminence + copywriting material lives in the **Ultimate Swipe File** (Jay Abraham preeminence, Brian Kurtz training). **Wait for Xander to place that folder in this working directory before drafting Issue 2's content** — do **not** reconstruct Abraham's teachings or invent quotes from memory. Describe the principle at a high level if needed, but any specific quote or claim must trace to the swipe file or a real fetched source (no-fabrication rule).
 
 ## Status (2026-08-06) — Issue 2 FINALIZED
-- **Issue 2 — DONE, zipped, drafting in ListMonk.** The preeminence editorial (Jay Abraham principle + Portsmouth coworking example) poured into a clean **beehiiv-style** template (white, bordered rounded cards, blue `#3b49df` accent, Helvetica) — supplied by Xander, applied faithfully (no invented slop). Byline **Johana Buitrago**. Subject **"The local deal is not the offer."** Greeting **"Hi {{ FirstName }},"**. Two editorial images (warm 2-person conversation + community-space interior). CTA = `whimsy-nebula` placeholder (swap to the branded domain before any send). File: `ready-to-send/the-dealmaker-issue-2/`.
+- **Issue 2 — DONE, zipped, drafting in ListMonk.** The preeminence editorial (Jay Abraham principle + Portsmouth coworking example) poured into a warm **cream-paper editorial** template (Xander-supplied "Mindful-Minutes" style — cream `#f7f4ed` background, Georgia serif headlines + a centred quote block, terracotta `#b85d3d` accent, dark pill CTAs, hairline rules; NO white cards), applied faithfully. **Redesigned Aug 6** off the clean-white-blue version so it never reads like The Open Source. Amber Spears quote used in the quote block; the Monday move in the numbered-list component. Byline **Johana Buitrago**. Subject **"The local deal is not the offer."** Greeting **"Hi {{ FirstName }},"**. Two editorial images (warm 2-person conversation + community-space interior). CTA = `whimsy-nebula` placeholder (swap to the branded domain before any send). File: `ready-to-send/the-dealmaker-issue-2/`.
 
 ## Status (2026-08-05)
 - **Issue 1 — SENT.** The **old direct-response letter** version (warm/amber palette) mailed to **~18,953** of the master list. That was the previous direction.
