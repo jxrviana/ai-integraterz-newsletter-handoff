@@ -50,3 +50,8 @@ sendy-keys*
 
 # --- Local source assets (images already ignored by extension) ---
 _raw-assets/
+
+# --- Exception: include the FINAL newsletter images in ready-to-send (complete handoff) ---
+!ready-to-send/**/images/*.jpg
+!ready-to-send/**/images/*.png
+!ready-to-send/**/images/*.jpeg
